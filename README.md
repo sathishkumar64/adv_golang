@@ -1,6 +1,6 @@
 # adv_golang
 
--   Complex Number
+-   Complex Number  -- Real (3) + imaginary number(7i) = complex number
 
 -   Type Command
 
