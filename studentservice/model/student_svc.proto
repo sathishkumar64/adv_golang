@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package model;
+
+message Student{
+
+    string studentId=1;
+    string studentName =2;
+    string className =3; 
+    string schoolname =4;
+}
+
+
+message CreateStuReq{
+    Student student =1;
+}
+
+message CreateStuRes{
+    Student student =1;
+}
+
+message ReadStuReq{
+    string schoolname =1;
+}
+
+message ReadStuRes{
+    Student student =1;
+}
+
+message ListStuReq{}
+
+message ListStuRes{
+   repeated Student student =1;
+}
+
+
+service StduentService{
+
+    rpc CreateStu(CreateStuReq) returns (CreateStuRes);
+    rpc ReadStuBySchool(ReadStuReq) returns (ReadStuRes);
+    rpc ListStus(ListStuReq) returns (stream ListStuRes);
+}

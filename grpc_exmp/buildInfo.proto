@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package grpc_exmp;
+
+message BuildRequest{
+    string buildId=1;
+}
+
+message BuildResponse{
+    string buildId=1;
+    string osName =2;
+    bool buildstatus =3; 
+}
+
+service GetMyBuild{
+    rpc myBuildInfo (BuildRequest) returns (BuildResponse);
+}

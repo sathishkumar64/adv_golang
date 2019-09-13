@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/binary"
 	"fmt"
 	"log"
 	"net"
@@ -14,15 +13,6 @@ import (
 type taskServer struct {
 }
 
-type length int64
-
-const (
-	sizeOfLength = 8
-	dbPath       = "mydb.pb"
-)
-
-var endianness = binary.LittleEndian
-
 func (t taskServer) List(ctx context.Context, void *todo.Void) (*todo.TaskList, error) {
 	log.Println("Getting inside.................")
 	return nil, fmt.Errorf("Not implemented")
@@ -30,7 +20,6 @@ func (t taskServer) List(ctx context.Context, void *todo.Void) (*todo.TaskList, 
 
 func main() {
 	srv := grpc.NewServer()
-
 	var tasks taskServer
 	todo.RegisterTasksServer(srv, tasks)
 	lis, err := net.Listen("tcp", ":8888")
