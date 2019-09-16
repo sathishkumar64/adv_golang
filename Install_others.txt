@@ -54,37 +54,38 @@ https://ewanvalentine.io/microservices-in-golang-part-1/
 
 
 
+Add protoc in ubuntu
+---------------------
+https://gist.github.com/sofyanhadia/37787e5ed098c97919b8c593f0ec44d8
 
 
+GO with GRPC Example
+-----------------------------
+https://github.com/vladimirvivien/go-grpc
+https://ewanvalentine.io/microservices-in-golang-part-1/
+
+https://github.com/grpc-ecosystem/grpc-gateway  // Manish Sent
+
+GO Example
+-------------
+https://github.com/micro/examples
+http://callistaenterprise.se/blogg/teknik/2017/02/17/go-blog-series-part1/
+https://outcrawl.com/go-microservices-cqrs-docker
 
 
 
 https://www.udemy.com/learn-go-the-complete-bootcamp-course-golang/?couponCode=YOUTUBER
 
 
-https://tutorialedge.net/golang/creating-simple-web-server-with-golang/#creating-a-basic-web-server
-
-https://ewanvalentine.io/microservices-in-golang-part-1/
-
-
-Example
-https://github.com/micro/examples
-
-http://callistaenterprise.se/blogg/teknik/2017/02/17/go-blog-series-part1/
-https://outcrawl.com/go-microservices-cqrs-docker
-
 To Create Proto
 ======================
 /c/Go/protoc-3.6.1-win32/bin/protoc.exe --go_out=. address.proto
-
 go get -u github.com/micro/go-micro
-
 https://www.melvinvivas.com/my-first-go-microservice/
 
 
 
 Read this document
-
 https://www.oreilly.com/library/view/building-microservices-with/9781786468666/
 
 
