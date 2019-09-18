@@ -8,6 +8,7 @@ import (
 	"os"
 	"context"
 	"time"
+	
 )
 func main(){
 	ctx := context.Background()
@@ -27,6 +28,7 @@ func main(){
 	}
 	defer res.Body.Close()
 	if res.StatusCode != http.StatusOK{
+		
 		log.Fatal(res.Status)
 	}
 	io.Copy(os.Stdout,res.Body)
