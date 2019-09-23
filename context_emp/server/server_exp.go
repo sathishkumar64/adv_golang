@@ -1,17 +1,16 @@
 package main
 
 import (
-	"net/http"
 	"fmt"
-	"log"	
+	"log"
+	"net/http"
 	"time"
 )
 
-func main(){
+func main() {
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
-
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
@@ -19,12 +18,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	defer log.Printf("Handler Ended")
 
 	select {
-	case <- time.After(5 * time.Second):
+	case <-time.After(5 * time.Second):
 		fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
-	case <- ctx.Done():
+	case <-ctx.Done():
 		err := ctx.Err()
 		log.Print(err)
-		http.Error(w,err.Error(),http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
-	
+
 }
